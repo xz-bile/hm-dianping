@@ -17,6 +17,19 @@
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <!-- Swagger 核心依赖 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <!-- Swagger UI 界面依赖（可选，但推荐加上以便调试） -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
@@ -34,7 +47,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
-            <version>5.1.47</version>
+            <version>8.0.33</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

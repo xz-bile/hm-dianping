@@ -10,6 +10,8 @@ import com.hmdp.service.IUserInfoService;
 import com.hmdp.service.IUserService;
 import com.hmdp.utils.UserHolder;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +29,8 @@ import javax.servlet.http.HttpSession;
 @Slf4j
 @RestController
 @RequestMapping("/user")
+@Api(tags = "用户模块")
+
 public class UserController {
 
     @Resource
@@ -39,6 +43,7 @@ public class UserController {
      * 发送手机验证码
      */
     @PostMapping("code")
+    @ApiOperation ("发送手机验证码")
     public Result sendCode(@RequestParam("phone") String phone, HttpSession session) {
         return userService.sendCode(phone, session);
     }
@@ -47,6 +52,7 @@ public class UserController {
      * 登录功能
      * @param loginForm 登录参数，包含手机号、验证码；或者手机号、密码
      */
+    @ApiOperation ("登录功能")
     @PostMapping("/login")
     public Result login(@RequestBody LoginFormDTO loginForm, HttpSession session){
         // 实现登录功能

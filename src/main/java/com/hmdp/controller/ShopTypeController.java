@@ -27,8 +27,7 @@ public class ShopTypeController {
 
     @GetMapping("list")
     public Result queryTypeList() {
-        List<ShopType> typeList = typeService
-                .query().orderByAsc("sort").list();
+        List<ShopType> typeList = typeService.queryTypelist(); //不使用list，避免和mybaits-plus的list重名
         return Result.ok(typeList);
     }
 }
