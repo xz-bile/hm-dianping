@@ -16,6 +16,7 @@ import com.hmdp.entity.User;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 
+
 public class LoginInterceptor implements HandlerInterceptor {
   // 拦截器
   @Override 
@@ -33,5 +34,4 @@ public class LoginInterceptor implements HandlerInterceptor {
     //移除用户
     UserHolder.removeUser();
   }
-  
 }

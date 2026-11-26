@@ -68,7 +68,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         // 3, 从 Redis 中获取真实的验证码
         String redisCode = stringRedisTemplate.opsForValue().get(RedisConstants.LOGIN_CODE_KEY + phone);
 
-        // 🚨 修复2：将用户输入的验证码与 Redis 中的验证码进行比对（不再使用 Session）
+        //将用户输入的验证码与 Redis 中的验证码进行比对
         if (inputCode == null || redisCode == null || !inputCode.equals(redisCode)) {
             return Result.fail("验证码错误");
         }

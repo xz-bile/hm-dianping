@@ -16,6 +16,7 @@ import com.hmdp.entity.User;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 
+//拦截器
 public class RefeshTokenInterceptor implements HandlerInterceptor {
 
   //配置类注入
